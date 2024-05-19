@@ -1,0 +1,352 @@
+<div class="main-content">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-8 col-md-4 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">content_paste</i>
+                        </div>
+                        <p class="card-category"></p>
+                        <h3 class="card-title">Génerer un nouveau rapport
+                            <h6>Création du Filtre</h6>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+<mat-horizontal-stepper  #stepper="matHorizontalStepper">
+  <mat-step >
+    <form >
+      <ng-template color="primary" class="text-primary" matStepLabel>Description du rapport </ng-template>
+      <h3>Description du rapport </h3>
+      <mat-form-field>
+        <input matInput placeholder="Nom du rapport" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Description du rapport" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext class="btn btn-rose pull-right">Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step >
+    <form >
+      <ng-template matStepLabel>Sélectionner la base de données</ng-template>
+      <h3>Sélectionner la base de données</h3>
+      <mat-form-field appearance="fill">
+        <mat-label>Nom de la base</mat-label>
+        <mat-select>
+            <mat-option value="option">Myshift</mat-option>
+            <mat-option value="option">DSI</mat-option>
+            <mat-option value="option">Mycollab</mat-option>
+            <mat-option value="option">Mycongé</mat-option>
+
+
+
+        </mat-select>
+        <!--<mat-hint align="end">Here's the dropdown arrow ^</mat-hint>-->
+     </mat-form-field>
+      <div>
+        <button mat-button matStepperNext class="btn btn-rose pull-right">Suivant</button>
+        <button mat-button matStepperPrevious class="btn btn-white pull-right">Avant</button>
+
+      </div>
+    </form>
+  </mat-step>
+  <mat-step >
+    <form >
+      <ng-template matStepLabel>Sélectionner les tables</ng-template>
+      <h3>Sélectionner les tables</h3>
+      <div class="table-responsive">
+        <table class="table">
+            <thead class=" text-danger">
+                <td>
+                      <div class="form-check">
+                          <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" value="" >
+                              <span class="form-check-sign">
+                                  <span class="check"></span>
+                              </span>
+                          </label>
+                      </div>
+                </td>
+                <th>
+                    Nom de la table
+                </th>
+                <th>
+                    La base de données
+                </th>
+                <th>
+                    Description
+                </th>
+            </thead>
+            <tbody>
+              <tr>  
+              <td>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" value="" >
+                        <span class="form-check-sign">
+                            <span class="check"></span>
+                        </span>
+                    </label>
+                </div>
+              </td>
+              <td>
+                Congés
+              </td>
+              <td>
+                Mycongé
+              </td>
+              <td>
+                Table des congés
+              </td>
+              </tr>
+              <tr>  
+                <td>
+                  <div class="form-check">
+                      <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" value="" >
+                          <span class="form-check-sign">
+                              <span class="check"></span>
+                          </span>
+                      </label>
+                  </div>
+                </td>
+                <td>
+                  Bénéficiaire
+                </td>
+                <td>
+                  Mycongé
+                </td>
+                <td>
+                  Table des congés
+                </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div>
+        <button mat-button matStepperNext class="btn btn-rose pull-right">Suivant</button>
+        <button mat-button matStepperPrevious class="btn btn-white pull-right">Avant</button>
+
+      </div>
+    </form>
+  </mat-step>
+  <mat-step >
+    <form >
+      <ng-template matStepLabel>Sélectionner les colonnes</ng-template>
+      <h3>Sélectionner les colonnes</h3>
+        <div class="table-responsive">
+          <table class="table">
+              <thead class=" text-danger">
+                  <td>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" value="" >
+                                <span class="form-check-sign">
+                                    <span class="check"></span>
+                                </span>
+                            </label>
+                        </div>
+                  </td>
+                  <th>
+                      Nom du colonnes
+                  </th>
+                  <th>
+                      Table mère
+                  </th>
+                  <th>
+                      Description
+                  </th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" >
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                  </td>
+                  <td>
+                      Id
+                  </td>
+                  <td>
+                      Congés
+                  </td>
+                  <td>
+                      le numéro identifiant le congé 
+                  </td>
+                </tr> 
+                <tr>
+                  <td>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" >
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                  </td>
+                  <td>
+                      Type
+                  </td>
+                  <td>
+                      Congés
+                  </td>
+                  <td>
+                      le type du congé
+                  </td>
+                </tr> 
+                <tr>
+                  <td>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" >
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                  </td>
+                  <td>
+                      Date
+                  </td>
+                  <td>
+                      Congés
+                  </td>
+                  <td>
+                      date du congé
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" >
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                  </td>
+                  <td>
+                      Id
+                  </td>
+                  <td>
+                      Bénéficiaire
+                  </td>
+                  <td>
+                      Id du bénéficiaire
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" >
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                  </td>
+                  <td>
+                    Nom 
+                  </td>
+                  <td>
+                      Bénéficiaire
+                  </td>
+                  <td>
+                      nom du bénéficiaire
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" value="" >
+                            <span class="form-check-sign">
+                                <span class="check"></span>
+                            </span>
+                        </label>
+                    </div>
+                  </td>
+                  <td>
+                    Service 
+                  </td>
+                  <td>
+                      Bénéficiaire
+                  </td>
+                  <td>
+                      Fonctionnalité du bénéficiaire
+                  </td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+      <div>
+        <button mat-button matStepperNext class="btn btn-rose pull-right">Suivant</button>
+        <button mat-button matStepperPrevious class="btn btn-white pull-right">Avant</button>
+      </div>
+    </form>
+  </mat-step>
+  
+  <mat-step>
+    <ng-template matStepLabel>Paramétrage du rapport</ng-template>
+    <h3>Paramétrage du rapport</h3>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <button mat-raised-button type="submit" class="btn btn-rose pull-right">+ Critère de recherche</button>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="col-md-4">
+      <mat-form-field>
+        <mat-label>Critères:</mat-label>
+        <mat-select>
+            <mat-option value="option"></mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Opérations:</mat-label>
+        <mat-select>
+            <mat-option value="option">=</mat-option>
+            <mat-option value="option">></mat-option>
+            <mat-option value="option"> < </mat-option>
+            <mat-option value="option"> >= </mat-option>
+            <mat-option value="option"> <= </mat-option>
+            <mat-option value="option"> != </mat-option>
+            <mat-option value="option"> LIKE </mat-option>
+            <mat-option value="option"> NOT LIKE </mat-option>
+            <mat-option value="option"> START WITH </mat-option>
+            <mat-option value="option"> END WITH </mat-option>
+            <mat-option value="option"> BETWEEN </mat-option>
+            <mat-option value="option"> NOT BETWEEN</mat-option>
+            <mat-option value="option"> IS NULL </mat-option>
+            <mat-option value="option"> IS NOT NULL </mat-option>
+
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <button mat-raised-button type="submit" class="btn btn-rose pull-right">Valider</button>
+      <button mat-raised-button type="submit" class="btn btn-white pull-right">Annuler</button>
+    </mat-expansion-panel>
+    <div>
+      <button mat-raised-button type="submit" class="btn btn-rose pull-right">Valider</button>
+      <button type="submit" class="btn btn-white pull-right" matStepperPrevious>Retourner</button><br><br>
+    </div>
+    <a href="#/typography"><button mat-raised-button type="submit" class="btn btn-white pull-left">Annuler</button></a>
+  </mat-step>
+
+</mat-horizontal-stepper>
+
+    </div>
+</div>
